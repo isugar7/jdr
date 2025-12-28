@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espèces du Royaume Imaginaire</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+        :root {
+            --bg-color: #1a1a2e;
+            --card-bg: #16213e;
+            --text-color: #e0e0e0;
+            --accent-color: #e94560;
+            --highlight: #0f3460;
+            --lithos: #8d6e63;
+            --celestin: #81d4fa;
+            --ombre: #78909c;
+            --mycelien: #a5d6a7;
+            --ferro: #b0bec5;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--highlight);
+            padding-bottom: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.2);
+        }
+
+        .card-header {
+            padding: 15px 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            position: relative;
+        }
+
+        /* Color-coding headers */
+        .lithos .card-header {
+            background-color: var(--lithos);
+            color: #2d2d2d;
+        }
+
+        .celestins .card-header {
+            background-color: var(--celestin);
+            color: #2d2d2d;
+        }
+
+        .ombrelames .card-header {
+            background-color: var(--ombre);
+            color: #2d2d2d;
+        }
+
+        .myceliens .card-header {
+            background-color: var(--mycelien);
+            color: #2d2d2d;
+        }
+
+        .ferrogardes .card-header {
+            background-color: var(--ferro);
+            color: #2d2d2d;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .description {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        .lore {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .ability-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .ability-title {
+            font-weight: bold;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .ability-effect {
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Le Codex des Peuples Oubliés</h1>
+
+    <div class="container">
+
+        <!-- 1. Lithos-Nés -->
+        <div class="card lithos">
+            <div class="card-header">
+                Les Lithos-Nés
+                <div style="font-size: 0.8rem; opacity: 0.8;">Peuple de Pierre</div>
+            </div>
+            <div class="card-body">
+                <p class="description">Des êtres massifs taillés dans la roche vivante, veines de magma refroidi.</p>
+                <div class="lore">
+                    Sculptés par les anciens, ils ne mangent ni ne dorment, se nourrissant de minéraux. Lents et
+                    patients, ils gardent les savoirs perdus dans les Profondeurs.
+                </div>
+                <div class="ability-box">
+                    <span class="ability-title">Compétence Unique : Écorce Terrestre</span>
+                    <div class="ability-effect">
+                        Peau dure comme la pierre. Résistance aux dégâts tranchants et immunité aux poisons organiques.
+                    </div>
+                    <span class="tag">#Défense</span> <span class="tag">#Tanking</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Célestins -->
+        <div class="card celestins">
+            <div class="card-header">
+                Les Célestins de l'Aube
+                <div style="font-size: 0.8rem; opacity: 0.8;">Peuple Aérien</div>
+            </div>
+            <div class="card-body">
+                <p class="description">Humanoïdes nacrés aux ailes diaphanes, obsédés par la vérité.</p>
+                <div class="lore">
+                    Descendants d'îles flottantes, leur voix apaise les esprits. Incapables de mentir physiquement, ils
+                    sont diplomates mais parfois trop directs.
+                </div>
+                <div class="ability-box">
+                    <span class="ability-title">Compétence Unique : Aura de Charisme</span>
+                    <div class="ability-effect">
+                        Aura apaisante naturelle. Avantage significatif lors des interactions sociales et persuasion.
+                    </div>
+                    <span class="tag">#Persuasion</span> <span class="tag">#Diplomatie</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Ombrelames -->
+        <div class="card ombrelames">
+            <div class="card-header">
+                Les Ombrelames
+                <div style="font-size: 0.8rem; opacity: 0.8;">Peuple des Marécages</div>
+            </div>
+            <div class="card-body">
+                <p class="description">Créatures sveltes à 4 bras, peau huileuse, maîtres du silence.</p>
+                <div class="lore">
+                    Réfugiés des marécages, ils valorisent le secret comme monnaie. Le bruit est pour eux une insulte.
+                    Espions nés.
+                </div>
+                <div class="ability-box">
+                    <span class="ability-title">Compétence Unique : Pas de Brume</span>
+                    <div class="ability-effect">
+                        Invisibilité totale en restant immobile dans une ombre ou la brume.
+                    </div>
+                    <span class="tag">#Infiltration</span> <span class="tag">#Discrétion</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Mycéliens -->
+        <div class="card myceliens">
+            <div class="card-header">
+                Les Mycéliens
+                <div style="font-size: 0.8rem; opacity: 0.8;">Peuple Fongique</div>
+            </div>
+            <div class="card-body">
+                <p class="description">Conscience collective dans des corps de champignons et d'écorce.</p>
+                <div class="lore">
+                    Alchimistes vivants, ils parlent par "Nous". Ils ne craignent pas la mort, retournant au Grand Tout
+                    pour renaître.
+                </div>
+                <div class="ability-box">
+                    <span class="ability-title">Compétence Unique : Spores Adaptatives</span>
+                    <div class="ability-effect">
+                        Nuage de spores au choix : Soin pour les alliés ou Poison pour les ennemis proches.
+                    </div>
+                    <span class="tag">#Soutien</span> <span class="tag">#Polyvalence</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Ferrogardes -->
+        <div class="card ferrogardes">
+            <div class="card-header">
+                Les Ferrogardes
+                <div style="font-size: 0.8rem; opacity: 0.8;">Constructs d'Âme</div>
+            </div>
+            <div class="card-body">
+                <p class="description">Armures animées par magie arcanique, sans corps physique.</p>
+                <div class="lore">
+                    Soldats d'une guerre oubliée, devenus libres. En voie d'extinction, ils cherchent un but. Coulent
+                    dans l'eau mais infatigables.
+                </div>
+                <div class="ability-box">
+                    <span class="ability-title">Compétence Unique : Surcharge Arcanique</span>
+                    <div class="ability-effect">
+                        Explosion de force magique temporaire pour des prouesses physiques surhumaines.
+                    </div>
+                    <span class="tag">#Force</span> <span class="tag">#Athlétisme</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
