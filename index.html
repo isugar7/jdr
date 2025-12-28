@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Monde de Bokiru</title>
+    <title>Bokiru, La Terre aux 1000 secrets</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap');
 
@@ -22,16 +22,16 @@
             --francis: #1565c0;
             --jewpiguer: #f9a825;
             --city: #00897b;
+            --monster: #ff5722;
         }
 
         body {
+            align-self: ;
             font-family: 'Lato', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
             padding: 0;
-            /* display: flex; flex-direction: column; align-items: center; */
-            /* Changed body display to block to handle full width sections */
         }
 
         .main-wrapper {
@@ -131,12 +131,12 @@
             background-color: var(--cuckures);
         }
 
-        .francis .card-header {
-            background-color: var(--francis);
-        }
-
         .francis {
             border-color: var(--francis);
+        }
+
+        .francis .card-header {
+            background-color: var(--francis);
         }
 
         .jewpiguer .card-header {
@@ -156,6 +156,17 @@
 
         .city-card .card-header {
             background-color: var(--city);
+            color: #fff;
+        }
+
+        /* Monster Style */
+        .monster-card {
+            background-color: #271a1a;
+            border-color: var(--monster);
+        }
+
+        .monster-card .card-header {
+            background-color: var(--monster);
             color: #fff;
         }
 
@@ -199,6 +210,31 @@
             letter-spacing: 1px;
         }
 
+        /* Warning style for unreliable info */
+        .warning-box {
+            background-color: rgba(255, 87, 34, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff5722;
+            margin-top: auto;
+        }
+
+        .warning-title {
+            font-weight: bold;
+            color: #ffab91;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .warning-text {
+            font-size: 0.9rem;
+            color: #ffccbc;
+            font-style: italic;
+        }
+
         .tag {
             display: inline-block;
             padding: 4px 8px;
@@ -232,12 +268,6 @@
                 sont dominées par des
                 <strong>monstres titanesques</strong>, des chimères issues d'expériences ratées, et des aberrations
                 magiques.
-            </p>
-            <p>
-                Les routes ne sont pas sûres : des bandes de <strong>pillards sans foi ni loi</strong> traquent les
-                voyageurs, tandis que de puissants
-                <strong>Boss régionaux</strong> — seigneurs de guerre, dragons corrompus ou IA démentes — revendiquent
-                des territoires entiers.
             </p>
             <p style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px; padding-top: 20px;">
                 Mais une menace bien plus grande gronde. Depuis deux centenaires, des abominations de plus en plus
@@ -362,8 +392,6 @@
                         de Bokiru, protégé par des champs de force. On y vient pour étudier, se soigner, ou consulter
                         les plus grandes archives du monde. La violence y est strictement interdite.
                     </div>
-                    <span class="tag">#Science</span> <span class="tag">#Francis</span> <span
-                        class="tag">#ZoneSûre</span>
                 </div>
             </div>
 
@@ -380,8 +408,6 @@
                         Lamuisante. On dit que même les dragons n'osent pas survoler Karta-Kara. C'est un lieu de
                         pèlerinage pour ceux qui cherchent à apprendre l'art de l'épée, mais peu en reviennent.
                     </div>
-                    <span class="tag">#Entrainement</span> <span class="tag">#Lamuisante</span> <span
-                        class="tag">#Secret</span>
                 </div>
             </div>
 
@@ -398,8 +424,6 @@
                         collectif des Cuckures. Ville élitiste et froide, on n'y accède que par téléportation ou
                         invitation. C'est le centre politique occulte de Bokiru.
                     </div>
-                    <span class="tag">#Télékinésie</span> <span class="tag">#Cuckures</span> <span
-                        class="tag">#Politique</span>
                 </div>
             </div>
 
@@ -416,8 +440,6 @@
                         C'est le grand marché de l'artisanat : on y trouve les meilleurs objets utilitaires du monde.
                         L'air y est chargé d'électricité statique.
                     </div>
-                    <span class="tag">#Commerce</span> <span class="tag">#Jewpiguer</span> <span
-                        class="tag">#Technologie</span>
                 </div>
             </div>
 
@@ -434,8 +456,79 @@
                         d'une mer acide. C'est le repaire des pillards, des chasseurs de primes et de tous ceux qui
                         fuient la loi. Ici, tout s'achète, même la vie.
                     </div>
-                    <span class="tag">#Pillards</span> <span class="tag">#Danger</span> <span
-                        class="tag">#MarchéNoir</span>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>Bestiaire des Terres Sauvages</h2>
+        <div class="container">
+
+            <!-- Monstre 1 -->
+            <div class="card monster-card">
+                <div class="card-header">
+                    Le Cauchemar de Cuivre
+                    <span class="emblem">👹</span>
+                </div>
+                <div class="card-body">
+                    <p class="description">Une abomination mi-chair mi-rouages.</p>
+                    <div class="lore">
+                        Une bête massive qui semble se nourrir de métal. Elle rôde près des ruines technologiques. Ses
+                        yeux brillent d'une lueur maladive et son hurlement ressemble au grincement d'un train qui
+                        déraille.
+                    </div>
+                    <div class="warning-box">
+                        <span class="warning-title">⚠️ Rumeur de Chasseur</span>
+                        <div class="warning-text">
+                            "On dit que le feu le renforce au lieu de le brûler. D'autres jurent qu'il faut viser le
+                            cœur brillant, mais j'ai vu une flèche ricocher dessus comme sur du diamant..."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monstre 2 -->
+            <div class="card monster-card">
+                <div class="card-header">
+                    La Dame des Marais Acide
+                    <span class="emblem">👻</span>
+                </div>
+                <div class="card-body">
+                    <p class="description">Une silhouette féminine composée de vase toxique.</p>
+                    <div class="lore">
+                        Elle attire les voyageurs perdus en imitant les pleurs d'un enfant. Ceux qui s'approchent sont
+                        dissous en quelques secondes. Elle semble intangible aux coups d'épée.
+                    </div>
+                    <div class="warning-box">
+                        <span class="warning-title">⚠️ Extrait d'un Journal Trouvé</span>
+                        <div class="warning-text">
+                            "Ne la regardez pas dans les yeux... c'est ce qu'ils disent. Mais j'ai entendu un Francis
+                            prétendre que le sel la solidifie. Ou était-ce le sucre ? Non, sûrement le sel..."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monstre 3 -->
+            <div class="card monster-card">
+                <div class="card-header">
+                    L'Ombre Vorace
+                    <span class="emblem">🌑</span>
+                </div>
+                <div class="card-body">
+                    <p class="description">Une nappe de ténèbres vivante et affamée.</p>
+                    <div class="lore">
+                        Elle se déplace sur les murs et les plafonds des donjons, enveloppant ses proies pour les
+                        étouffer. Elle déteste la lumière du soleil, mais semble étrangement attirée par les torches
+                        magiques.
+                    </div>
+                    <div class="warning-box">
+                        <span class="warning-title">⚠️ Note Griffonnée</span>
+                        <div class="warning-text">
+                            "Si vous l'éclairez, elle recule... c'est faux ! La dernière fois qu'Allistair a allumé sa
+                            torche, la chose a bondi dessus. Elle mange la lumière ? Ou peut-être la chaleur ?"
+                        </div>
+                    </div>
                 </div>
             </div>
 
