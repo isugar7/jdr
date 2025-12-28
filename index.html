@@ -14,11 +14,16 @@
             --text-color: #e0e0e0;
             --accent-color: #e94560;
             --highlight: #0f3460;
-            --lithos: #8d6e63;
-            --celestin: #81d4fa;
-            --ombre: #78909c;
-            --mycelien: #a5d6a7;
-            --ferro: #b0bec5;
+
+            /* Race Colors */
+            --lamuisante: #b71c1c;
+            /* Dark Red for Samurai/Blood */
+            --cuckures: #6a1b9a;
+            /* Deep Purple for Psychic */
+            --francis: #1565c0;
+            /* Blue for Science/Wisdom */
+            --jewpiguer: #f9a825;
+            /* Gold/Electric for Machines */
         }
 
         body {
@@ -59,6 +64,7 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             flex-direction: column;
+            border-top: 5px solid transparent;
         }
 
         .card:hover {
@@ -76,34 +82,44 @@
         }
 
         /* Color-coding headers */
-        .lithos .card-header {
-            background-color: var(--lithos);
-            color: #2d2d2d;
+        .lamuisante {
+            border-color: var(--lamuisante);
         }
 
-        .celestins .card-header {
-            background-color: var(--celestin);
-            color: #2d2d2d;
+        .lamuisante .card-header {
+            background-color: var(--lamuisante);
         }
 
-        .ombrelames .card-header {
-            background-color: var(--ombre);
-            color: #2d2d2d;
+        .cuckures {
+            border-color: var(--cuckures);
         }
 
-        .myceliens .card-header {
-            background-color: var(--mycelien);
-            color: #2d2d2d;
+        .cuckures .card-header {
+            background-color: var(--cuckures);
         }
 
-        .ferrogardes .card-header {
-            background-color: var(--ferro);
-            color: #2d2d2d;
+        .francis {
+            border-color: var(--francis);
+        }
+
+        .francis .card-header {
+            background-color: var(--francis);
+        }
+
+        .jewpiguer {
+            border-color: var(--jewpiguer);
+        }
+
+        .jewpiguer .card-header {
+            background-color: var(--jewpiguer);
+            color: #1a1a2e;
         }
 
         .card-body {
             padding: 20px;
             flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .description {
@@ -111,11 +127,14 @@
             margin-bottom: 15px;
             color: #b0b0b0;
             font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
         }
 
         .lore {
             margin-bottom: 20px;
             line-height: 1.6;
+            flex-grow: 1;
         }
 
         .ability-box {
@@ -123,6 +142,7 @@
             padding: 15px;
             border-radius: 8px;
             border-left: 4px solid var(--accent-color);
+            margin-top: auto;
         }
 
         .ability-title {
@@ -154,121 +174,116 @@
 
 <body>
 
-    <h1>Le Codex des Peuples Oubliés</h1>
+    <h1>Les Gardiens des Légendes</h1>
 
     <div class="container">
 
-        <!-- 1. Lithos-Nés -->
-        <div class="card lithos">
+        <!-- 1. La Lamuisante -->
+        <div class="card lamuisante">
             <div class="card-header">
-                Les Lithos-Nés
-                <div style="font-size: 0.8rem; opacity: 0.8;">Peuple de Pierre</div>
+                Les Lamuisante
+                <div style="font-size: 0.8rem; opacity: 0.8;">Les Derniers Katanas</div>
             </div>
             <div class="card-body">
-                <p class="description">Des êtres massifs taillés dans la roche vivante, veines de magma refroidi.</p>
+                <p class="description">De vieux samouraïs errants, portant le poids d'un siècle de batailles.</p>
                 <div class="lore">
-                    Sculptés par les anciens, ils ne mangent ni ne dorment, se nourrissant de minéraux. Lents et
-                    patients, ils gardent les savoirs perdus dans les Profondeurs.
+                    Autrefois garde d'élite de l'Empire de Jade, leur ordre fut décimé lors de la "Nuit de Honkaî", une
+                    trahison politique sanglante. Il ne reste aujourd'hui que quelques dizaines de survivants, tous âgés
+                    mais dont le corps s'est endurci comme le fer.<br><br>
+                    Ils parcourent le monde en quête d'une fin honorable ou d'un élève digne de leurs techniques
+                    secrètes. Leurs rides ne sont que des camouflages : sous la peau parcheminée réside une musculature
+                    d'acier capable de fendre la pierre d'un seul coup.
                 </div>
                 <div class="ability-box">
-                    <span class="ability-title">Compétence Unique : Robustesse Ancestrale</span>
+                    <span class="ability-title">Compétence Unique : Maîtrise Martiale Ultime</span>
                     <div class="ability-effect">
-                        Une constitution physique hors du commun permettant d'endurer des environnements extrêmes et de
-                        porter de lourdes charges sans fatigue.
+                        Leur expérience millénaire du combat leur permet d'anticiper chaque mouvement. Ils gagnent une
+                        force et une agilité surhumaines dès qu'ils dégainent leur lame, ignorant la douleur et la
+                        fatigue.
                     </div>
-                    <span class="tag">#Endurance</span> <span class="tag">#Résistance</span>
+                    <span class="tag">#Force</span> <span class="tag">#Agilité</span>
                 </div>
             </div>
         </div>
 
-        <!-- 2. Célestins -->
-        <div class="card celestins">
+        <!-- 2. Les Cuckures -->
+        <div class="card cuckures">
             <div class="card-header">
-                Les Célestins de l'Aube
-                <div style="font-size: 0.8rem; opacity: 0.8;">Peuple Aérien</div>
+                Les Cuckures
+                <div style="font-size: 0.8rem; opacity: 0.8;">Héritiers d'Ozukar</div>
             </div>
             <div class="card-body">
-                <p class="description">Humanoïdes nacrés aux ailes diaphanes, obsédés par la vérité.</p>
+                <p class="description">Une noblesse déchue au corps frêle mais à l'esprit tyranique.</p>
                 <div class="lore">
-                    Descendants d'îles flottantes, leur voix apaise les esprits. Incapables de mentir physiquement, ils
-                    sont diplomates mais parfois trop directs.
+                    Fils directs du Grand Ozukar, le psionique fou, les Cuckures ont hérité d'une malédiction génétique
+                    : leurs muscles s'atrophient dès l'adolescence. Pour survivre, ils ont développé une maîtrise
+                    terrifiante de la télékinésie.<br><br>
+                    Ils ne marchent pas, ils flottent. Ils ne portent rien, leur esprit le fait pour eux. Souvent
+                    méprisés pour leur apparence maladive, ils sont craingts par les rois car ils peuvent broyer une
+                    armure de plate par la seule force de leur pensée vengeresse.
                 </div>
                 <div class="ability-box">
-                    <span class="ability-title">Compétence Unique : Ascendance Sociale</span>
+                    <span class="ability-title">Compétence Unique : Télékinésie Supérieure</span>
                     <div class="ability-effect">
-                        Une facilité déconcertante à comprendre, inspirer et manipuler les émotions d'autrui dans
-                        n'importe quelle situation sociale.
+                        Permet de manipuler des objets lourds à distance, de créer des barrières invisibles ou de
+                        projeter violemment leurs ennemis, compensant totalement leur fragilité physique.
                     </div>
-                    <span class="tag">#Social</span> <span class="tag">#Psychologie</span>
+                    <span class="tag">#Magie</span> <span class="tag">#Esprit</span>
                 </div>
             </div>
         </div>
 
-        <!-- 3. Ombrelames -->
-        <div class="card ombrelames">
+        <!-- 3. Les Francis -->
+        <div class="card francis">
             <div class="card-header">
-                Les Ombrelames
-                <div style="font-size: 0.8rem; opacity: 0.8;">Peuple des Marécages</div>
+                Les Francis
+                <div style="font-size: 0.8rem; opacity: 0.8;">Les Repentis du Savoir</div>
             </div>
             <div class="card-body">
-                <p class="description">Créatures sveltes à 4 bras, peau huileuse, maîtres du silence.</p>
+                <p class="description">Une nation de guerriers devenus philosophes et scientifiques.</p>
                 <div class="lore">
-                    Réfugiés des marécages, ils valorisent le secret comme monnaie. Le bruit est pour eux une insulte.
-                    Espions nés.
+                    Pendant des siècles, les Francis furent les mercenaires les plus brutaux du continent. Tout changea
+                    après le "Massacre des Jewpiguer", où ils réalisèrent l'horreur de leurs actes. Ils déposèrent les
+                    armes pour prendre la plume et le microscope.<br><br>
+                    Aujourd'hui, leurs citadelles ne sont plus des forteresses mais des académies. Ils cherchent à
+                    racheter leur passé sanglant en guérissant les maux du monde par la science, bien que leur instinct
+                    martial refasse parfois surface lorsqu'ils sont menacés.
                 </div>
                 <div class="ability-box">
-                    <span class="ability-title">Compétence Unique : Mouvements Silencieux</span>
+                    <span class="ability-title">Compétence Unique : Analyse Scientifique</span>
                     <div class="ability-effect">
-                        Une grâce féline naturelle qui rend la plupart de leurs déplacements quasi-inaudibles, peu
-                        importe le terrain ou l'équipement.
+                        Leur intellect aiguisé leur permet de déceler instantanément les points faibles structurels d'un
+                        bâtiment ou les failles biologiques d'une créature, maximisant l'efficacité de leurs actions.
                     </div>
-                    <span class="tag">#Discrétion</span> <span class="tag">#Agilité</span>
+                    <span class="tag">#Intelligence</span> <span class="tag">#Savoir</span>
                 </div>
             </div>
         </div>
 
-        <!-- 4. Mycéliens -->
-        <div class="card myceliens">
+        <!-- 4. Les Jewpiguer -->
+        <div class="card jewpiguer">
             <div class="card-header">
-                Les Mycéliens
-                <div style="font-size: 0.8rem; opacity: 0.8;">Peuple Fongique</div>
+                Les Jewpiguer
+                <div style="font-size: 0.8rem; opacity: 0.8;">Constructs de Lumière</div>
             </div>
             <div class="card-body">
-                <p class="description">Conscience collective dans des corps de champignons et d'écorce.</p>
+                <p class="description">Machines vivantes et pacifistes, gardiens de la création.</p>
                 <div class="lore">
-                    Alchimistes vivants, ils parlent par "Nous". Ils ne craignent pas la mort, retournant au Grand Tout
-                    pour renaître.
+                    Créatures bio-mécaniques anciennes, animées par une énergie crépitante d'origine mystique (souvent
+                    liée aux textes anciens). Pacifistes absolus, ils ont été presque exterminés par le passé car ils
+                    refusaient de se défendre.<br><br>
+                    Leur corps est composé de nuées de nano-particules dorées qu'ils peuvent solidifier à volonté. Ils
+                    sont les architectes ultimes, capables de bâtir un pont ou un abri en quelques secondes pour
+                    protéger la vie, mais leur programmation leur interdit formellement de créer tout ce qui pourrait
+                    ôter la vie.
                 </div>
                 <div class="ability-box">
-                    <span class="ability-title">Compétence Unique : Savoir de la Forêt</span>
+                    <span class="ability-title">Compétence Unique : Création Pacifique</span>
                     <div class="ability-effect">
-                        Une intuition profonde pour la nature, conférant une capacité innée à identifier les plantes,
-                        trouver des ressources et survivre en milieu sauvage.
+                        Pouvoir de matérialiser instantanément des outils, des protections ou des mécanismes complexes à
+                        partir de leurs propres particules, tant que l'objet n'est pas une arme offensive.
                     </div>
-                    <span class="tag">#Survie</span> <span class="tag">#Nature</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5. Ferrogardes -->
-        <div class="card ferrogardes">
-            <div class="card-header">
-                Les Ferrogardes
-                <div style="font-size: 0.8rem; opacity: 0.8;">Constructs d'Âme</div>
-            </div>
-            <div class="card-body">
-                <p class="description">Armures animées par magie arcanique, sans corps physique.</p>
-                <div class="lore">
-                    Soldats d'une guerre oubliée, devenus libres. En voie d'extinction, ils cherchent un but. Coulent
-                    dans l'eau mais infatigables.
-                </div>
-                <div class="ability-box">
-                    <span class="ability-title">Compétence Unique : Vigueur Éternelle</span>
-                    <div class="ability-effect">
-                        Absence totale de besoins physiologiques (manger, dormir, respirer) et immunité à l'épuisement
-                        physique.
-                    </div>
-                    <span class="tag">#Infatigable</span> <span class="tag">#Vigilance</span>
+                    <span class="tag">#Création</span> <span class="tag">#Nanotech</span>
                 </div>
             </div>
         </div>
