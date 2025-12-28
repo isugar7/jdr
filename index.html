@@ -4,26 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espèces du Royaume Imaginaire</title>
+    <title>Le Monde de Bokiru</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap');
 
         :root {
             --bg-color: #1a1a2e;
             --card-bg: #16213e;
+            --section-bg: #1f2a48;
             --text-color: #e0e0e0;
             --accent-color: #e94560;
             --highlight: #0f3460;
 
             /* Race Colors */
             --lamuisante: #b71c1c;
-            /* Dark Red for Samurai/Blood */
             --cuckures: #6a1b9a;
-            /* Deep Purple for Psychic */
             --francis: #1565c0;
-            /* Blue for Science/Wisdom */
             --jewpiguer: #f9a825;
-            /* Gold/Electric for Machines */
+            --city: #00897b;
         }
 
         body {
@@ -31,28 +29,63 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            /* display: flex; flex-direction: column; align-items: center; */
+            /* Changed body display to block to handle full width sections */
+        }
+
+        .main-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 20px;
         }
 
-        h1 {
+        h1,
+        h2 {
             font-family: 'Cinzel', serif;
             color: var(--accent-color);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-size: 2.5rem;
-            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 40px 0 20px 0;
             border-bottom: 2px solid var(--highlight);
             padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            color: #fff;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            display: inline-block;
+        }
+
+        .intro-text {
+            max-width: 800px;
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
             width: 100%;
             max-width: 1200px;
+            margin-bottom: 40px;
         }
 
         .card {
@@ -75,13 +108,13 @@
         .card-header {
             padding: 15px 20px;
             font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: #fff;
             position: relative;
         }
 
-        /* Color-coding headers */
+        /* Race Colors */
         .lamuisante {
             border-color: var(--lamuisante);
         }
@@ -98,21 +131,32 @@
             background-color: var(--cuckures);
         }
 
+        .francis .card-header {
+            background-color: var(--francis);
+        }
+
         .francis {
             border-color: var(--francis);
         }
 
-        .francis .card-header {
-            background-color: var(--francis);
+        .jewpiguer .card-header {
+            background-color: var(--jewpiguer);
+            color: #1a1a2e;
         }
 
         .jewpiguer {
             border-color: var(--jewpiguer);
         }
 
-        .jewpiguer .card-header {
-            background-color: var(--jewpiguer);
-            color: #1a1a2e;
+        /* City Style */
+        .city-card {
+            background-color: var(--section-bg);
+            border-color: var(--city);
+        }
+
+        .city-card .card-header {
+            background-color: var(--city);
+            color: #fff;
         }
 
         .card-body {
@@ -155,10 +199,6 @@
             letter-spacing: 1px;
         }
 
-        .ability-effect {
-            font-size: 0.9rem;
-        }
-
         .tag {
             display: inline-block;
             padding: 4px 8px;
@@ -169,123 +209,236 @@
             font-weight: bold;
             color: #fff;
         }
+
+        .emblem {
+            float: right;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Les Gardiens des Légendes</h1>
+    <div class="main-wrapper">
 
-    <div class="container">
+        <h1>Bokiru, La Terre aux 1000 secrets</h1>
 
-        <!-- 1. La Lamuisante -->
-        <div class="card lamuisante">
-            <div class="card-header">
-                Les Lamuisante
-                <div style="font-size: 0.8rem; opacity: 0.8;">Les Derniers Katanas</div>
-            </div>
-            <div class="card-body">
-                <p class="description">De vieux samouraïs errants, portant le poids d'un siècle de batailles.</p>
-                <div class="lore">
-                    Autrefois garde d'élite de l'Empire de Jade, leur ordre fut décimé lors de la "Nuit de Honkaî", une
-                    trahison politique sanglante. Il ne reste aujourd'hui que quelques dizaines de survivants, tous âgés
-                    mais dont le corps s'est endurci comme le fer.<br><br>
-                    Ils parcourent le monde en quête d'une fin honorable ou d'un élève digne de leurs techniques
-                    secrètes. Leurs rides ne sont que des camouflages : sous la peau parcheminée réside une musculature
-                    d'acier capable de fendre la pierre d'un seul coup.
-                </div>
-                <div class="ability-box">
-                    <span class="ability-title">Compétence Unique : Maîtrise Martiale Ultime</span>
-                    <div class="ability-effect">
-                        Leur expérience millénaire du combat leur permet d'anticiper chaque mouvement. Ils gagnent une
-                        force et une agilité surhumaines dès qu'ils dégainent leur lame, ignorant la douleur et la
-                        fatigue.
-                    </div>
-                    <span class="tag">#Force</span> <span class="tag">#Agilité</span>
-                </div>
-            </div>
+        <div class="intro-text">
+            <p>
+                Bienvenue à <strong>Bokiru</strong>, un monde fracturé où la magie ancienne côtoie la technologie
+                interdite.
+                Ici, la survie n'est pas un droit, mais une conquête. Au-delà des cités fortifiées, les terres sauvages
+                sont dominées par des
+                <strong>monstres titanesques</strong>, des chimères issues d'expériences ratées, et des aberrations
+                magiques.
+            </p>
+            <p>
+                Les routes ne sont pas sûres : des bandes de <strong>pillards sans foi ni loi</strong> traquent les
+                voyageurs, tandis que de puissants
+                <strong>Boss régionaux</strong> — seigneurs de guerre, dragons corrompus ou IA démentes — revendiquent
+                des territoires entiers.
+            </p>
+            <p style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px; padding-top: 20px;">
+                Mais une menace bien plus grande gronde. Depuis deux centenaires, des abominations de plus en plus
+                puissantes émergent des ténèbres, fruits de la terrible <strong>"Malédiction Grakij"</strong>.
+                Cette corruption, source primordiale du chaos, semble invulnérable aux armées conventionnelles. Les
+                légendes racontent que seule une équipe exceptionnelle,
+                tissée de la <strong>diversité des peuples</strong>, pourra un jour briser le cycle et purifier Bokiru.
+            </p>
         </div>
 
-        <!-- 2. Les Cuckures -->
-        <div class="card cuckures">
-            <div class="card-header">
-                Les Cuckures
-                <div style="font-size: 0.8rem; opacity: 0.8;">Héritiers d'Ozukar</div>
-            </div>
-            <div class="card-body">
-                <p class="description">Une noblesse déchue au corps frêle mais à l'esprit tyranique.</p>
-                <div class="lore">
-                    Fils directs du Grand Ozukar, le psionique fou, les Cuckures ont hérité d'une malédiction génétique
-                    : leurs muscles s'atrophient dès l'adolescence. Pour survivre, ils ont développé une maîtrise
-                    terrifiante de la télékinésie.<br><br>
-                    Ils ne marchent pas, ils flottent. Ils ne portent rien, leur esprit le fait pour eux. Souvent
-                    méprisés pour leur apparence maladive, ils sont craingts par les rois car ils peuvent broyer une
-                    armure de plate par la seule force de leur pensée vengeresse.
+        <h2>Les 4 Peuples Majeurs</h2>
+        <div class="container">
+
+            <!-- 1. La Lamuisante -->
+            <div class="card lamuisante">
+                <div class="card-header">
+                    Les Lamuisante
+                    <span class="emblem">⚔️</span>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">Les Derniers Katanas</div>
                 </div>
-                <div class="ability-box">
-                    <span class="ability-title">Compétence Unique : Télékinésie Supérieure</span>
-                    <div class="ability-effect">
-                        Permet de manipuler des objets lourds à distance, de créer des barrières invisibles ou de
-                        projeter violemment leurs ennemis, compensant totalement leur fragilité physique.
+                <div class="card-body">
+                    <p class="description">De vieux samouraïs errants, portant le poids d'un siècle de batailles.</p>
+                    <div class="lore">
+                        Survivants du massacre de Honkaî, ils sont les derniers de leur genre. Malgré leur âge, ce sont
+                        de redoutables guerriers. Leurs rides camouflent une musculature d'acier. Ils cherchent une fin
+                        honorable.
                     </div>
-                    <span class="tag">#Magie</span> <span class="tag">#Esprit</span>
+                    <div class="ability-box">
+                        <span class="ability-title">Compétence : Maîtrise Martiale Ultime</span>
+                        <div class="ability-effect">
+                            Force et agilité surhumaines au combat. Anticipation parfaite des mouvements adverses.
+                        </div>
+                        <span class="tag">#Combat</span> <span class="tag">#Honneur</span>
+                    </div>
                 </div>
             </div>
+
+            <!-- 2. Les Cuckures -->
+            <div class="card cuckures">
+                <div class="card-header">
+                    Les Cuckures
+                    <span class="emblem">👁️</span>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">Héritiers d'Ozukar</div>
+                </div>
+                <div class="card-body">
+                    <p class="description">Une lignée au physique frêle mais à l'esprit tyranique.</p>
+                    <div class="lore">
+                        Fils du psionique fou Ozukar, maudits génétiquement par une atrophie musculaire. Ils compensent
+                        par une télékinésie terrifiante. Ils ne marchent pas, ils flottent.
+                    </div>
+                    <div class="ability-box">
+                        <span class="ability-title">Compétence : Télékinésie Supérieure</span>
+                        <div class="ability-effect">
+                            Manipulation d'objets lourds et barrières psychiques. Force mentale dévastatrice.
+                        </div>
+                        <span class="tag">#Magie</span> <span class="tag">#Esprit</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Les Francis -->
+            <div class="card francis">
+                <div class="card-header">
+                    Les Francis
+                    <span class="emblem">🔬</span>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">Les Repentis du Savoir</div>
+                </div>
+                <div class="card-body">
+                    <p class="description">Anciens bourreaux convertis aux sciences après le massacre.</p>
+                    <div class="lore">
+                        Traumatisés par leurs propres crimes contre les Jewpiguer, ils ont déposé les armes pour les
+                        microscopes. Ils cherchent la rédemption par la connaissance curative.
+                    </div>
+                    <div class="ability-box">
+                        <span class="ability-title">Compétence : Analyse Scientifique</span>
+                        <div class="ability-effect">
+                            Détection instantanée des faiblesses structurelles ou biologiques.
+                        </div>
+                        <span class="tag">#Science</span> <span class="tag">#Stratégie</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Les Jewpiguer -->
+            <div class="card jewpiguer">
+                <div class="card-header">
+                    Les Jewpiguer
+                    <span class="emblem">⚙️</span>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">Constructs de Lumière</div>
+                </div>
+                <div class="card-body">
+                    <p class="description">Machines vivantes et pacifistes, créateurs de génie.</p>
+                    <div class="lore">
+                        Créatures bio-mécaniques composées de nano-particules dorées. Pacifistes absolus, ils peuvent
+                        bâtir des merveilles en quelques secondes, tant que ce ne sont pas des armes.
+                    </div>
+                    <div class="ability-box">
+                        <span class="ability-title">Compétence : Création Pacifique</span>
+                        <div class="ability-effect">
+                            Matérialisation instantanée d'objets ou structures défensives/utilitaires.
+                        </div>
+                        <span class="tag">#Création</span> <span class="tag">#Architecture</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <!-- 3. Les Francis -->
-        <div class="card francis">
-            <div class="card-header">
-                Les Francis
-                <div style="font-size: 0.8rem; opacity: 0.8;">Les Repentis du Savoir</div>
-            </div>
-            <div class="card-body">
-                <p class="description">Une nation de guerriers devenus philosophes et scientifiques.</p>
-                <div class="lore">
-                    Pendant des siècles, les Francis furent les mercenaires les plus brutaux du continent. Tout changea
-                    après le "Massacre des Jewpiguer", où ils réalisèrent l'horreur de leurs actes. Ils déposèrent les
-                    armes pour prendre la plume et le microscope.<br><br>
-                    Aujourd'hui, leurs citadelles ne sont plus des forteresses mais des académies. Ils cherchent à
-                    racheter leur passé sanglant en guérissant les maux du monde par la science, bien que leur instinct
-                    martial refasse parfois surface lorsqu'ils sont menacés.
-                </div>
-                <div class="ability-box">
-                    <span class="ability-title">Compétence Unique : Analyse Scientifique</span>
-                    <div class="ability-effect">
-                        Leur intellect aiguisé leur permet de déceler instantanément les points faibles structurels d'un
-                        bâtiment ou les failles biologiques d'une créature, maximisant l'efficacité de leurs actions.
-                    </div>
-                    <span class="tag">#Intelligence</span> <span class="tag">#Savoir</span>
-                </div>
-            </div>
-        </div>
+        <h2>Les 5 Cités Légendaires</h2>
+        <div class="container">
 
-        <!-- 4. Les Jewpiguer -->
-        <div class="card jewpiguer">
-            <div class="card-header">
-                Les Jewpiguer
-                <div style="font-size: 0.8rem; opacity: 0.8;">Constructs de Lumière</div>
-            </div>
-            <div class="card-body">
-                <p class="description">Machines vivantes et pacifistes, gardiens de la création.</p>
-                <div class="lore">
-                    Créatures bio-mécaniques anciennes, animées par une énergie crépitante d'origine mystique (souvent
-                    liée aux textes anciens). Pacifistes absolus, ils ont été presque exterminés par le passé car ils
-                    refusaient de se défendre.<br><br>
-                    Leur corps est composé de nuées de nano-particules dorées qu'ils peuvent solidifier à volonté. Ils
-                    sont les architectes ultimes, capables de bâtir un pont ou un abri en quelques secondes pour
-                    protéger la vie, mais leur programmation leur interdit formellement de créer tout ce qui pourrait
-                    ôter la vie.
+            <!-- Ville 1 -->
+            <div class="card city-card">
+                <div class="card-header">
+                    Novum-Francis
+                    <span class="emblem">🏛️</span>
                 </div>
-                <div class="ability-box">
-                    <span class="ability-title">Compétence Unique : Création Pacifique</span>
-                    <div class="ability-effect">
-                        Pouvoir de matérialiser instantanément des outils, des protections ou des mécanismes complexes à
-                        partir de leurs propres particules, tant que l'objet n'est pas une arme offensive.
+                <div class="card-body">
+                    <p class="description">La Capitale du Savoir</p>
+                    <div class="lore">
+                        Une métropole d'un blanc immaculé, dirigée par le Conseil des Francis. C'est le lieu le plus sûr
+                        de Bokiru, protégé par des champs de force. On y vient pour étudier, se soigner, ou consulter
+                        les plus grandes archives du monde. La violence y est strictement interdite.
                     </div>
-                    <span class="tag">#Création</span> <span class="tag">#Nanotech</span>
+                    <span class="tag">#Science</span> <span class="tag">#Francis</span> <span
+                        class="tag">#ZoneSûre</span>
                 </div>
             </div>
+
+            <!-- Ville 2 -->
+            <div class="card city-card">
+                <div class="card-header">
+                    Karta-Kara
+                    <span class="emblem">⛩️</span>
+                </div>
+                <div class="card-body">
+                    <p class="description">Le Dojo Fantôme</p>
+                    <div class="lore">
+                        Un village caché dans une vallée de brume éternelle, où résident les derniers maîtres
+                        Lamuisante. On dit que même les dragons n'osent pas survoler Karta-Kara. C'est un lieu de
+                        pèlerinage pour ceux qui cherchent à apprendre l'art de l'épée, mais peu en reviennent.
+                    </div>
+                    <span class="tag">#Entrainement</span> <span class="tag">#Lamuisante</span> <span
+                        class="tag">#Secret</span>
+                </div>
+            </div>
+
+            <!-- Ville 3 -->
+            <div class="card city-card">
+                <div class="card-header">
+                    Céphalis
+                    <span class="emblem">🌌</span>
+                </div>
+                <div class="card-body">
+                    <p class="description">La Tour Céleste</p>
+                    <div class="lore">
+                        Une immense flèche de pierre noire maintenue en lévitation à 200 mètres du sol par l'esprit
+                        collectif des Cuckures. Ville élitiste et froide, on n'y accède que par téléportation ou
+                        invitation. C'est le centre politique occulte de Bokiru.
+                    </div>
+                    <span class="tag">#Télékinésie</span> <span class="tag">#Cuckures</span> <span
+                        class="tag">#Politique</span>
+                </div>
+            </div>
+
+            <!-- Ville 4 -->
+            <div class="card city-card">
+                <div class="card-header">
+                    L'Usine-Mère
+                    <span class="emblem">⚡</span>
+                </div>
+                <div class="card-body">
+                    <p class="description">La Ruche Dorée</p>
+                    <div class="lore">
+                        Une cité souterraine titanesque habitée par les Jewpiguer. Ses murs pulsent d'une lumière dorée.
+                        C'est le grand marché de l'artisanat : on y trouve les meilleurs objets utilitaires du monde.
+                        L'air y est chargé d'électricité statique.
+                    </div>
+                    <span class="tag">#Commerce</span> <span class="tag">#Jewpiguer</span> <span
+                        class="tag">#Technologie</span>
+                </div>
+            </div>
+
+            <!-- Ville 5 -->
+            <div class="card city-card">
+                <div class="card-header">
+                    Port-Rouge
+                    <span class="emblem">☠️</span>
+                </div>
+                <div class="card-body">
+                    <p class="description">Le Refuge des Parias</p>
+                    <div class="lore">
+                        Une ville anarchique construite dans la carcasse calcifiée d'un monstre marin géant, au bord
+                        d'une mer acide. C'est le repaire des pillards, des chasseurs de primes et de tous ceux qui
+                        fuient la loi. Ici, tout s'achète, même la vie.
+                    </div>
+                    <span class="tag">#Pillards</span> <span class="tag">#Danger</span> <span
+                        class="tag">#MarchéNoir</span>
+                </div>
+            </div>
+
         </div>
 
     </div>
